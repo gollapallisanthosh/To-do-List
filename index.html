@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Todo List</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="todo-container">
+      <!-- Dark Mode Toggle -->
+      <button class="mode-toggle" id="mode-toggle" title="Toggle Dark Mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <h1>Todo List</h1>
+
+      <!-- Theme Selector -->
+      <div class="theme-selector">
+        <div class="theme-btn active" style="background: linear-gradient(135deg, #8e2de2, #4a00e0)" data-theme="purple-blue"></div>
+        <div class="theme-btn" style="background: linear-gradient(135deg, #00c6ff, #0072ff)" data-theme="blue"></div>
+        <div class="theme-btn" style="background: linear-gradient(135deg, #f12711, #f5af19)" data-theme="orange"></div>
+        <div class="theme-btn" style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364)" data-theme="dark"></div>
+        <div class="theme-btn" style="background: linear-gradient(135deg, #43cea2, #185a9d)" data-theme="green-blue"></div>
+      </div>
+
+      <!-- Add Task Section -->
+      <div class="add-task">
+        <input type="text" id="new-task" placeholder="Add a new task..." autocomplete="off"/>
+        <button id="add-btn"><i class="fa-solid fa-plus"></i> Add</button>
+      </div>
+
+      <div class="datetime-inputs">
+        <input type="date" id="task-date" class="data-input">
+        <input type="time" id="task-time" class="time-input">
+      </div>
+
+      <div class="task-stats">
+        <div id="total-task">0 tasks</div>
+        <div id="completed-task">0 completed</div>
+      </div>
+
+      <div class="task-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+
+      <div class="task-list">
+        <div class="empty-state">
+            <i class="fas fa-task"></i>
+            <h3>No task yet</h3>
+            <p>Add your first task to get started</p>
+        </div>
+      </div>
+
+      <div class="priority-selector-container">
+        <div class="priority-selector">
+            <span class="priority-label">Priority</span>
+            <div class="priority-options">
+               <div class="priority-option" data-priority="high" style="color: #ff6b6b;">High</div>
+                <div class="priority-option" data-priority="medium" style="color: #feca57;">Medium</div>
+                <div class="priority-option" data-priority="low" style="color: #1dd1a1;">Low</div>
+                <div class="priority-slider" id="priority-slider"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

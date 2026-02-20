@@ -1,0 +1,263 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  transition: 0.4s ease;
+}
+
+/* ================= MAIN CONTAINER ================= */
+.todo-container {
+  width: 420px;
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  position: relative;
+  transition: 0.4s ease;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* ================= DARK MODE TOGGLE ================= */
+.mode-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.mode-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ================= THEME SELECTOR ================= */
+.theme-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.theme-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.theme-btn:hover {
+  transform: scale(1.15);
+}
+
+.theme-btn.active {
+  border: 2px solid #fff;
+  transform: scale(1.2);
+}
+
+/* ================= ADD TASK ================= */
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#new-task {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+#add-btn {
+  padding: 0 15px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  color: #4a00e0;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+#add-btn:hover {
+  transform: scale(1.05);
+  background: #f1f1f1;
+}
+
+/* ================= DATE & TIME ================= */
+.datetime-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.datetime-inputs input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* ================= TASK STATS ================= */
+.task-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+/* ================= FILTER BUTTONS ================= */
+.task-filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.filter-btn {
+  flex: 1;
+  margin: 0 3px;
+  padding: 6px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #fff;
+  color: #4a00e0;
+}
+
+/* ================= TASK LIST ================= */
+.task-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  opacity: 0.8;
+}
+
+.empty-state i {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+/* ================= PRIORITY SELECTOR ================= */
+.priority-selector-container {
+  margin-top: 10px;
+}
+
+.priority-selector {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.priority-label {
+  font-size: 12px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.priority-options {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.priority-option {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  padding: 6px 0;
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.priority-option:hover {
+  transform: scale(1.05);
+}
+
+.priority-slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 33.3%;
+  height: 5px;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+/* ================= DARK MODE ================= */
+body.dark {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+body.dark .todo-container {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+body.dark #add-btn {
+  background: #333;
+  color: white;
+}
+
+body.dark .filter-btn.active {
+  background: #ffd43b;
+  color: black;
+}
+
+/* ================= PRIORITY INDICATOR ================= */
+.priority-indicator {
+  display: block;
+  font-size: 11px;
+  margin-top: 4px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.priority-indicator.high { color: #ff6b6b; }
+.priority-indicator.medium { color: #feca57; }
+.priority-indicator.low { color: #1dd1a1; }
